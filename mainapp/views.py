@@ -11,7 +11,13 @@ def main(request):
     return render(request, 'mainapp/index.html',context)
 
 def products(request):
-    return render(request, 'mainapp/products.html')
+    context = {
+        'name': 'Задачи',
+        'my_list': [
+            "Ветвление", "Циклы", "Линейные", "сортировка"
+        ]
+    }
+    return render(request, 'mainapp/products.html', context)
 
 def contact(request):
     return render(request, 'mainapp/contact.html')
